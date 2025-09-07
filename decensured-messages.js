@@ -62,13 +62,13 @@ function processDecensuredMessage(msgElement, decensuredMsg) {
     const contentElement = msgElement.querySelector('.message-content, .text-enrichi-forum');
     if (!contentElement) return;
     
-    const originalContentContainer = document.createElement("div");
-    originalContentContainer.className = 'deboucled-decensured-original-content-container';
-    originalContentContainer.id = `deboucled-container-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    const originalContentsContainer = document.createElement("div");
+    originalContentsContainer.className = 'deboucled-decensured-original-content-container';
+    originalContentsContainer.id = `deboucled-container-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
     const originalContents = contentElement.querySelectorAll(':scope > :not([class*="deboucled"])');
     originalContents.forEach(content => {
-        originalContentContainer.appendChild(content);
+        originalContentsContainer.appendChild(content);
     });
 
     const realContentDiv = document.createElement('div');
@@ -76,14 +76,14 @@ function processDecensuredMessage(msgElement, decensuredMsg) {
     realContentDiv.id = `deboucled-content-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     realContentDiv.innerHTML = formatMessageContent(realContent);
 
-    const decensuredIndicator = createToggleButton(originalContentContainer, realContentDiv);
+    const decensuredIndicator = createToggleButton(originalContentsContainer, realContentDiv);
 
-    if (originalContentContainer) {
-        originalContentContainer.style.display = 'none';
+    if (originalContentsContainer) {
+        originalContentsContainer.style.display = 'none';
     }
 
     contentElement.insertBefore(decensuredIndicator, contentElement.firstChild);
-    contentElement.insertBefore(originalContentContainer, decensuredIndicator.nextSibling);
+    contentElement.insertBefore(originalContentsContainer, decensuredIndicator.nextSibling);
     contentElement.appendChild(realContentDiv);
 
     realContentDiv.classList.add('deboucled-content-entering');
