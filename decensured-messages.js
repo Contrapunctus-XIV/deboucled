@@ -61,21 +61,27 @@ function processDecensuredMessage(msgElement, decensuredMsg) {
 
     const contentElement = msgElement.querySelector('.message-content, .text-enrichi-forum');
     if (!contentElement) return;
+    
+    const originalContentContainer = document.createElement("div");
 
-    const originalContent = contentElement.querySelector('p, div');
+    const originalContents = contentElement.querySelectorAll(':scope > p, :scope > blockquote');
+    originalContents.forEach(content => {
+        originalContentContainer.appendChild(content);
+    });
 
     const realContentDiv = document.createElement('div');
     realContentDiv.className = 'deboucled-decensured-content';
     realContentDiv.id = `deboucled-content-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     realContentDiv.innerHTML = formatMessageContent(realContent);
 
-    const decensuredIndicator = createToggleButton(originalContent, realContentDiv);
+    const decensuredIndicator = createToggleButton(originalContentContainer, realContentDiv);
 
-    if (originalContent) {
-        originalContent.style.display = 'none';
+    if (originalContentContainer) {
+        originalContentContainer.style.display = 'none';
     }
 
     contentElement.insertBefore(decensuredIndicator, contentElement.firstChild);
+    contentElement.insertBefore(originalContentContainer, decensuredIndicator.nextSibling);
     contentElement.appendChild(realContentDiv);
 
     realContentDiv.classList.add('deboucled-content-entering');

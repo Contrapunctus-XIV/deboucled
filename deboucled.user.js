@@ -2,8 +2,8 @@
 // @name        Déboucled
 // @namespace   deboucledjvcom
 // @version     2.66.0
-// @downloadURL https://github.com/Rand0max/deboucled/raw/master/deboucled.user.js
-// @updateURL   https://github.com/Rand0max/deboucled/raw/master/deboucled.meta.js
+// @downloadURL https://github.com/Contrapunctus-XIV/deboucled/raw/master/deboucled.user.js
+// @updateURL   https://github.com/Contrapunctus-XIV/deboucled/raw/master/deboucled.meta.js
 // @author      Rand0max
 // @description Masque les topics, les sujets et les auteurs indésirables et vous sort de la boucle.
 // @icon        https://image.noelshack.com/fichiers/2021/38/6/1632606701-deboucled.png
@@ -32,8 +32,8 @@
 // @grant       GM.listValues
 // @grant       GM.getResourceText
 // @grant       GM.xmlHttpRequest
-// @resource    DEBOUCLED_CSS https://raw.githubusercontent.com/Rand0max/deboucled/master/deboucled.css
-// @resource    JVRESPAWNREFINED_CSS https://raw.githubusercontent.com/Rand0max/deboucled/master/jv-respawn-refined.css
+// @resource    DEBOUCLED_CSS https://raw.githubusercontent.com/Contrapunctus-XIV/deboucled/master/deboucled.css
+// @resource    JVRESPAWNREFINED_CSS https://raw.githubusercontent.com/Contrapunctus-XIV/deboucled/master/jv-respawn-refined.css
 // @resource    CHARTS_CSS https://unpkg.com/charts.css@1.1.0/dist/charts.min.css
 // @resource    SWEETALERTDARK_CSS https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark/dark.css
 // @resource    LITEYOUTUBE_CSS https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.css
