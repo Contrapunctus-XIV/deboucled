@@ -64,7 +64,7 @@ function processDecensuredMessage(msgElement, decensuredMsg) {
     
     const originalContentContainer = document.createElement("div");
 
-    const originalContents = contentElement.querySelectorAll(':scope > p, :scope > blockquote');
+    const originalContents = contentElement.querySelectorAll(':scope > :not([class*="deboucled"])');
     originalContents.forEach(content => {
         originalContentContainer.appendChild(content);
     });
