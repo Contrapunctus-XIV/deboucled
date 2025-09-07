@@ -63,6 +63,8 @@ function processDecensuredMessage(msgElement, decensuredMsg) {
     if (!contentElement) return;
     
     const originalContentContainer = document.createElement("div");
+    originalContentContainer.className = 'deboucled-decensured-original-content-container';
+    originalContentContainer.id = `deboucled-container-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
     const originalContents = contentElement.querySelectorAll(':scope > :not([class*="deboucled"])');
     originalContents.forEach(content => {
